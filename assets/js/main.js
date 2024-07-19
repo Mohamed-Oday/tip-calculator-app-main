@@ -19,6 +19,12 @@ document.querySelectorAll('.btn').forEach(button => {
     }); 
 });
 
+document.querySelectorAll('#form').forEach(form => {
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+    })
+})
+
 function getBill(){
     const bill = document.getElementById('bill');
     let billValue = bill.value;

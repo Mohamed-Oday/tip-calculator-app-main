@@ -28,7 +28,7 @@
         <div class="flex flex-col justify-center items-start md:w-[50%] md:pl-[20px]">
             <!-- Bill Section -->
             <div class="pb-[30px] md:pb-[47px] w-full">
-                <form action="#" method="post" class="w-full">
+                <form id="form" action="#" method="post" class="w-full">
                     <div class="flex flex-row justify-between w-full items-center">
                         <p class="md:text-[16px] text-[12px] text-[#6b797a] font-[700] pb-[5px]">Bill</p>
                         <p id="errorMessage" class="hidden md:text-[14px] text-[10px] text-[#c18171] font-[700] pb-[5px]">Wrong number</p>
@@ -45,13 +45,15 @@
                     <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">15%</button>
                     <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">25%</button>
                     <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">50%</button>
-                    <input type="number" min="0" name="custom" id="tip" placeholder="Custom" required class="py-[3px] px-[14px] w-full bg-[#f3f8fb] placeholder-[#647a77] text-right font-[500] text-[18px] rounded-lg md:pr-[17px] md:font-[700] md:text-[26px]">
+                    <form id="form" action="#" method="post" class="w-full">
+                        <input type="number" min="0" name="custom" id="tip" placeholder="Custom" required class="py-[3px] px-[14px] w-full bg-[#f3f8fb] placeholder-[#647a77] text-right font-[500] text-[18px] rounded-lg md:pr-[17px] md:font-[700] md:text-[26px]">
+                    </form>    
                 </div>
             </div>
 
             <!-- Number of People Section -->
             <div class="pb-[30px] md:pb-0 w-full">
-                <form action="#" method="post" class="w-full">
+                <form id="form" action="#" method="post" class="w-full">
                     <div class="flex flex-row justify-between w-full items-center">
                         <p class="md:text-[16px] text-[12px] text-[#6b797a] font-[700] pb-[5px]">Number of People</p>
                         <p id="peopleError" class="hidden md:text-[14px] text-[10px] text-[#c18171] font-[700] pb-[5px]">Can't be zero</p>
