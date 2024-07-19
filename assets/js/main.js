@@ -80,6 +80,8 @@ function calculate(){
 function getStart(){
     document.getElementById('tipPerPerson').textContent = '$0.00';
     document.getElementById('totalPerPerson').textContent = '$0.00';
+    document.getElementById('reset').classList.add('bg-[#0d686d]')
+    document.getElementById('reset').classList.remove('bg-[#26c2ad]')
 }
 
 document.getElementById('reset').addEventListener('click', function(){
