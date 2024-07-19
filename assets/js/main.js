@@ -76,21 +76,18 @@ function calculate(){
 }
 
 function getStart(){
-    document.getElementById('bill').value = '142.55';
-    document.getElementById('idPeople').value = '5';
-    document.querySelectorAll('.btn')[2].classList.add('active');
-    calculate();
+    document.getElementById('tipPerPerson').textContent = '$0.00';
+    document.getElementById('totalPerPerson').textContent = '$0.00';
 }
 
 document.getElementById('reset').addEventListener('click', function(){
     document.getElementById('bill').value = '';
     document.getElementById('idPeople').value = '';
     document.getElementById('tip').value = '';
-    document.getElementById('tipPerPerson').textContent = '$0.00';
-    document.getElementById('totalPerPerson').textContent = '$0.00';
     document.querySelectorAll('.btn.active').forEach(btn => btn.classList.remove('active'));
     errorMessage.classList.add('hidden');
     peopleError.classList.add('hidden');
+    getStart();
 });
 
 getStart();
