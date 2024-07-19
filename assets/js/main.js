@@ -4,32 +4,37 @@ const errorMessage = document.getElementById('errorMessage');
 const peopleError = document.getElementById('peopleError');
 
 document.getElementById('bill').addEventListener('input', calculate);
-document.getElementById('idPeople').addEventListener('input', calculate);
+document.getElementById('idPeople').addEventListener('input', function() {
+    const people = document.getElementById('idPeople');
+    let peopleValue = parseFloat(people.value);
+    if (peopleValue > 0) {
+        peopleError.classList.add('hidden');
+    }
+    calculate();
+});
 document.getElementById('tip').addEventListener('input', function() {
     document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
     calculate();
 });
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', function(){
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
+        document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
         calculate();
-    }); 
+    });
 });
 
 document.querySelectorAll('#form').forEach(form => {
     form.addEventListener('submit', function(e){
         e.preventDefault();
-    })
-})
+    });
+});
 
-function getBill(){
+function getBill() {
     const bill = document.getElementById('bill');
     let billValue = bill.value;
     let billNumber = parseFloat(billValue);
-    if(isNaN(billNumber) || billNumber <= 0){
+    if (isNaN(billNumber) || billNumber <= 0) {
         errorMessage.classList.remove('hidden');
         return null;
     } else {
@@ -38,9 +43,9 @@ function getBill(){
     }
 }
 
-function getTip(){
+function getTip() {
     const activeBtn = document.querySelector('.btn.active');
-    if (activeBtn){
+    if (activeBtn) {
         return parseFloat(activeBtn.innerText.replace('%', ''));
     } else {
         const tip = document.getElementById('tip');
@@ -49,10 +54,10 @@ function getTip(){
     }
 }
 
-function getPeople(){
+function getPeople() {
     const people = document.getElementById('idPeople');
     let peopleValue = parseFloat(people.value);
-    if (isNaN(peopleValue) || peopleValue <= 0){
+    if (isNaN(peopleValue) || peopleValue <= 0) {
         peopleError.classList.remove('hidden');
         return null;
     } else {
@@ -61,12 +66,12 @@ function getPeople(){
     }
 }
 
-function calculate(){
+function calculate() {
     const bill = getBill();
     const tip = getTip();
-    const people = getPeople();
+    const people = document.getElementById('idPeople').value ? getPeople() : null;
 
-    if (bill === null || people === null){
+    if (bill === null || people === null) {
         tipPerPerson.textContent = '$0.00';
         totalPerPerson.textContent = '$0.00';
         return;
@@ -79,15 +84,15 @@ function calculate(){
 
     tipPerPerson.textContent = '$' + tipPerPersonValue.toFixed(2);
     totalPerPerson.textContent = '$' + totalPerPersonValue.toFixed(2);
-    document.getElementById('reset').classList.remove('bg-[#0d686d]')
-    document.getElementById('reset').classList.add('bg-[#26c2ad]')
+    document.getElementById('reset').classList.remove('bg-[#0d686d]');
+    document.getElementById('reset').classList.add('bg-[#26c2ad]');
 }
 
-function getStart(){
+function getStart() {
     document.getElementById('tipPerPerson').textContent = '$0.00';
     document.getElementById('totalPerPerson').textContent = '$0.00';
-    document.getElementById('reset').classList.add('bg-[#0d686d]')
-    document.getElementById('reset').classList.remove('bg-[#26c2ad]')
+    document.getElementById('reset').classList.add('bg-[#0d686d]');
+    document.getElementById('reset').classList.remove('bg-[#26c2ad]');
 }
 
 document.getElementById('reset').addEventListener('click', function(){
