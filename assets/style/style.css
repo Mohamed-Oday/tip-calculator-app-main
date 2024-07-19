@@ -1,3 +1,56 @@
 *{
     font-family: 'Space Mono', monospace; 
 }
+
+.bill-input{
+    background: url(../images/icon-dollar.svg) no-repeat;
+    background-position: 10px center;
+}
+
+.people-input{
+    background: url(../images/icon-person.svg) no-repeat;
+    background-position: 10px center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]::-ms-clear {
+    display: none;
+}
+
+.btn{
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background-color: #9fe8df;
+    color: #00474b;
+}
+
+.btn.active{
+    background-color: #26c2ad;
+    color: #00474b;
+}
+
+input{
+    cursor: pointer;
+}
+
+input:focus, input:hover{
+    outline: 2px solid #26c2ad;
+}
+
+
+
+@media (min-width: 768px) {
+    .bill-btn{
+        background-position: 20px center;
+    }
+    .people-btn{
+        background-position: 20px center;
+    }
+}

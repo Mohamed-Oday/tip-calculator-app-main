@@ -25,24 +25,23 @@
     </div>
     <main class="mx-auto flex flex-col md:flex-row items-center justify-center bg-white rounded-[20px] md:w-[923px] md:h-[483px] md:p-[30px] p-[1em]">
         <!-- Bill Information Section-->
-        <div class="flex flex-col justify-center items-start md:w-[50%]">
+        <div class="flex flex-col justify-center items-start md:w-[50%] md:pl-[20px]">
             <!-- Bill Section -->
             <div class="pb-[30px] md:pb-[47px] w-full">
                 <form action="#" method="post" class="w-full">
-                    <p class="text-[16px] text-[#6b797a] font-[700] pb-[5px]">Bill</p>
-                    <input type="text" id="bill" name="bill" placeholder="0" required class="w-full bg-[#f3f8fb] text-[24px] text-[#084b50] rounded-sm border-none text-right px-[10px] md:py-[5px] md:px-[15px]"> 
+                    <p class="md:text-[16px] text-[12px] text-[#6b797a] font-[700] pb-[5px]">Bill</p>
+                    <input type="text" id="bill" name="bill" placeholder="0" required class="bill-input w-full bg-[#f3f8fb] md:text-[24px] text-[19px] text-[#084b50] rounded-sm border-none text-right px-[10px] md:py-[7px] md:px-[15px] font-[700]"> 
                 </form>
             </div>
-
             <!-- Tip Section -->
             <div class="md:pb-[47px] pb-[30px]">
-                <p class="text-[16px] text-[#6b797a] font-[700] pb-[10px]">Select Tip %</p>
+                <p class="md:text-[16px] text-[12px] text-[#6b797a] font-[700] pb-[5px]">Select Tip %</p>
                 <div class="grid grid-rows-3 grid-cols-2 gap-[10px] md:grid-rows-2 md:grid-cols-3 md:gap-[15px]">
-                    <button class="p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">5%</button>
-                    <button class="p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">10%</button>
-                    <button class="p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">15%</button>
-                    <button class="p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">25%</button>
-                    <button class="p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">50%</button>
+                    <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">5%</button>
+                    <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">10%</button>
+                    <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">15%</button>
+                    <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">25%</button>
+                    <button class="btn p-[3px] w-full bg-[#00474b] text-white font-[500] text-[18px] rounded-lg md:p-[5px] md:font-[700] md:text-[26px]">50%</button>
                     <input type="text" name="custom" id="Custom" placeholder="Custom" required class="py-[3px] px-[14px] w-full bg-[#f3f8fb] placeholder-[#647a77] text-right font-[500] text-[18px] rounded-lg md:pr-[17px] md:font-[700] md:text-[26px]">
                 </div>
             </div>
@@ -50,8 +49,11 @@
             <!-- Number of People Section -->
             <div class="pb-[30px] md:pb-0 w-full">
                 <form action="#" method="post" class="w-full">
-                    <p class="text-[16px] text-[#6b797a] font-[700] pb-[5px]">Number of People</p>
-                    <input type="number" id="idPeople" name="nbr-people" placeholder="0" required min="1" class="w-full bg-[#f3f8fb] text-[24px] text-[#084b50] rounded-sm border-none text-right px-[10px]">
+                    <div class="flex flex-row justify-between w-full items-center">
+                        <p class="md:text-[16px] text-[12px] text-[#6b797a] font-[700] pb-[5px]">Number of People</p>
+                        <p class="hidden md:text-[14px] text-[10px] text-[#c18171] font-[700] pb-[5px]">Can't be zero</p>
+                    </div>
+                    <input type="number" id="idPeople" name="nbr-people" placeholder="0" required min="0" class="people-input w-full bg-[#f3f8fb] md:text-[24px] text-[19px] text-[#084b50] rounded-sm border-none text-right px-[10px] md:py-[7px] md:px-[15px] font-[700]">
                 </form>
             </div>
         </div>
@@ -81,7 +83,7 @@
             </div>
             </div>
             <!-- Reset Button -->
-            <button class="bg-[#26c2ad] text-[#00474b] font-[700] w-full p-[4px] rounded-lg md:p-[11px] md:text-[18px]">RESET</button>
+            <button class="btn bg-[#26c2ad] text-[#00474b] font-[700] w-full p-[4px] rounded-lg md:p-[11px] md:text-[18px]">RESET</button>
         </div>
     </main>
 </body>
