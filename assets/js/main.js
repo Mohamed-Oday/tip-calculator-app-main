@@ -73,6 +73,8 @@ function calculate(){
 
     tipPerPerson.textContent = '$' + tipPerPersonValue.toFixed(2);
     totalPerPerson.textContent = '$' + totalPerPersonValue.toFixed(2);
+    document.getElementById('reset').classList.remove('bg-[#0d686d]')
+    document.getElementById('reset').classList.add('bg-[#26c2ad]')
 }
 
 function getStart(){
